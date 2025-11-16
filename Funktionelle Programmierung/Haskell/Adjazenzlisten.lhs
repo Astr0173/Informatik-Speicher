@@ -8,18 +8,17 @@ Eine passende initiale Adjazenzliste zum Experimentieren:
 Daraus kann dann mit add diese vollständige Liste werden:
 
 > adListe = 
->  [ (0, [1, 2, 4])
->  , (1, [0, 3])
->  , (2, [0, 3, 4])
->  , (3, [1, 2, 4, 5])
->  , (4, [0, 2, 3, 5])
->  , (5, [3, 4])
->  ]
+>   [ (0, [1, 2, 4])
+>   , (1, [0, 3])
+>   , (2, [0, 3, 4])
+>   , (3, [1, 2, 4, 5])
+>   , (4, [0, 2, 3, 5])
+>   , (5, [3, 4])
+>   ]
 
-addEdge - Ali, Yasin
-Diese Funktion soll eine neue Kante (Verbindung) zwischen den exisistierenden Knoten schaffen.
-  > type AdListe = [(Int, [Int])]
+addEdge
 
+> type AdListe = [(Int, [Int])]
 > adListe :: AdListe
 
 > addEdge :: AdListe -> (Int, Int) -> AdListe
@@ -29,7 +28,7 @@ Diese Funktion soll eine neue Kante (Verbindung) zwischen den exisistierenden Kn
 >  | e == b    = (e, a : ys) : addEdge xs (a, b)
 >  | otherwise = (e, ys)     : addEdge xs (a, b)
 
-Beispiel :
+Beispieleingabe:
  Eingabe :   addEdge adListe (0, 3)
  Ausgabe : [(0,[3,1,2,4]),(1,[0,3]),(2,[0,3,4]),(3,[0,1,2,4,5]),(4,[0,2,3,5]),(5,[3,4])]
  
